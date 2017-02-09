@@ -26,6 +26,7 @@ int main() {
 
     srand(time(NULL));
 
+    /*
     // Singly Linked List Tests
     linkedList n; // create a list
 
@@ -69,7 +70,7 @@ int main() {
     cout << "Remove 5th item in list: " << endl;
     cout << "Display List: " << x.displayList() << endl;
 
-
+    */
 
     // Doubly Linked List tests
     doublyLinkedList a;
@@ -107,7 +108,28 @@ int main() {
     cout << "Fwd Traversal Size: " << a.getSizeWithFwdTraversal() << endl;
     cout << "Bwd Traversal Size: " << a.getSizeWithBwdTraversal() << endl;
 
-    getchar();
+
+    for (int i = 0; i < 5; i++){ // push back
+        a.pushBack2(rand() % 10 + 1);
+    }
+
+    for (int i = 0; i < 5; i++){ // push front
+        a.pushFront2(rand() % 10 + 1);
+    }
+
+    cout << "Display List Fwd: " << a.displayListFwd() << endl;
+    a.removeRange(0,4);
+    cout << "Size Quick: " << a.getSizeQuick2() << endl;
+    cout << "Display List Fwd: " << a.displayListFwd() << endl;
+    //a.clearList();
+    cout << "Size Quick: " << a.getSizeQuick2() << endl;
+    cout << "Display List Fwd: " << a.displayListFwd() << endl;
+    // getchar(); USED SO IT DOESNT DISSAPPEAR WHEN USING THE COMMAND LINE
+
+    doublyLinkedList b = a;
+    cout << "Size Quick: " << b.getSizeQuick2() << endl;
+    cout << "Display List Fwd: " << b.displayListFwd() << endl;
+
 
     return 0;
 }

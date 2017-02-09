@@ -46,8 +46,21 @@ public:
 		tail = NULL;
 	}
 
-	int getSizeQuick2(){ // DONE2 - returns the number of nodes stored in the list
-		return doubly_linked_list_size;
+	// Copy Constructor
+	doublyLinkedList(const doublyLinkedList& other){
+		this->head = NULL;
+		this->tail = NULL;
+		doubly_linked_list_size = 0;
+		doubly_linked_node* temp = other.head;
+		while(temp){
+			int val = temp->node_data;
+			this->pushBack2(val);
+			temp = temp->next;
+		}
+	}
+
+	int getSizeQuick2(){ // DONE2 - returns the number of nodes stored in the list (constantly updated with insert and remove)
+		return doubly_linked_list_size; // that is why this one is quicker; i just keep the others there for good practice.
 	}
 
 	int getSizeWithFwdTraversal(){ // DONE2 - traverse the list front to back and count the size
@@ -63,7 +76,7 @@ public:
 		return traversal_size + 1;
 	}
 
-	int getSizeWithBwdTraversal(){ // DONE2 - trsaverse the list backwards to get the size
+	int getSizeWithBwdTraversal(){ // DONE2 - traverse the list backwards to get the size
 		if (!head){
 			return 0;
 		}
@@ -115,6 +128,21 @@ public:
 		tail = new_node;
 	}
 
+	void clearList() {// clears list but does not delete the list(destruct). Just empties it.
+		removeRange(0,doubly_linked_list_size);
+	}
+	void removeRange(int start_index, int end_index){ // remove a range of items in a linked list
+		if(doubly_linked_list_size >= end_index && doubly_linked_list_size >= start_index){
+			for (int i = end_index - 1; i >= start_index; i-- ){
+				remove2(i);
+			}
+		}
+		else{
+			std::cout << "Range exceeds array size!!!! Cannot remove" << std::endl;
+
+		}
+	}
+
 	/*
 	void sortList(){
 	if (!head || head->next == NULL){
@@ -135,6 +163,8 @@ public:
 	}
 
 
+
+
 	*/
 	// get order increasing 
 	// get order decreasing
@@ -143,7 +173,7 @@ public:
 	//SPLIT into N lists
 	// get position
 
-	void remove2(int pos){
+	void remove2(int pos){ // done
 		if (getSizeQuick2() == 0 || pos > getSizeQuick2() - 1){
 			return;
 		}
