@@ -229,3 +229,458 @@ TEST_F(testClass, speedSetAt) {
     clock_t last2_stop = clock();
     EXPECT_NEAR(first_stop - first_start, last2_stop - last2_start, 500);
 }
+
+/**
+    *Remove
+*/
+
+TEST_F(testClass, remove1) {
+    doublyLinkedList<int> a;
+    ASSERT_EQ(a.size(), 0);
+    ASSERT_ANY_THROW(a.remove(0));
+}
+
+TEST_F(testClass, remove2) {
+    doublyLinkedList<int> a;
+    a.push_front(5);
+    ASSERT_EQ(a.size(), 1);
+    a.remove(0);
+    ASSERT_EQ(a.size(), 0);
+}
+
+TEST_F(testClass, remove3) {
+    doublyLinkedList<int> a;
+    a.push_front(5);
+    ASSERT_EQ(a.size(), 1);
+    a.remove(-1);
+    ASSERT_EQ(a.size(), 0);
+}
+
+TEST_F(testClass, remove4) {
+    doublyLinkedList<int> a;
+    a.push_front(5);
+    a.push_back(6);
+    a.push_back(7);
+    ASSERT_EQ(a.size(), 3);
+    a.remove(-1);
+    ASSERT_EQ(a.size(), 2);
+    ASSERT_EQ(a.getAt(0), 5);
+    ASSERT_EQ(a.getAt(1), 6);
+    ASSERT_ANY_THROW(a.getAt(2));
+}
+
+TEST_F(testClass, remove5) {
+    doublyLinkedList<int> a;
+    a.push_front(5);
+    a.push_back(6);
+    a.push_back(7);
+    ASSERT_EQ(a.size(), 3);
+    a.remove(1);
+    ASSERT_EQ(a.size(), 2);
+    ASSERT_EQ(a.getAt(0), 5);
+    ASSERT_EQ(a.getAt(1), 7);
+}
+
+TEST_F(testClass, remove6) {
+    doublyLinkedList<int> a;
+    a.push_front(5);
+    a.push_back(6);
+    a.push_back(7);
+    ASSERT_EQ(a.size(), 3);
+    a.remove(-2);
+    ASSERT_EQ(a.size(), 2);
+    ASSERT_EQ(a.getAt(0), 5);
+    ASSERT_EQ(a.getAt(1), 7);
+}
+
+TEST_F(testClass, remove7) {
+    doublyLinkedList<int> a;
+    a.push_front(5);
+    a.push_back(6);
+    a.push_back(7);
+    ASSERT_EQ(a.size(), 3);
+    a.remove(-1);
+    ASSERT_EQ(a.size(), 2);
+    a.remove(-1);
+    ASSERT_EQ(a.size(), 1);
+    a.remove(-1);
+    ASSERT_EQ(a.size(), 0);
+    ASSERT_ANY_THROW(a.remove(-1));
+}
+
+TEST_F(testClass, remove8) {
+    doublyLinkedList<int> a;
+    for(int i = 0 ; i < SIZE; i++){
+        a.push_front(i*2);
+    }
+    // How fast is deleting the first element?
+    clock_t first_start = clock();
+    for(int i = 0 ; i < SIZE/5; i++){
+        a.remove(0);
+    }
+    clock_t first_stop = clock();
+    // How fast removing the last element?
+    clock_t last2_start = clock();
+    for(int i = 0 ; i < SIZE/5; i++){
+        a.remove(-1);
+    }
+    clock_t last2_stop = clock();
+    EXPECT_NEAR(first_stop - first_start, last2_stop - last2_start, 500);
+}
+
+TEST_F(testClass, remove9) {
+    doublyLinkedList<int> a;
+    const int SIZE = 1000;
+    for(int i = 0 ; i < SIZE; i++){
+        a.push_front(i*2);
+    }
+    // How fast is deleting the first element?
+    clock_t first_start = clock();
+    for(int i = 0 ; i < SIZE/5; i++){
+        a.remove(0);
+    }
+    clock_t first_stop = clock();
+    // How fast removing the last element?
+    clock_t last2_start = clock();
+    for(int i = 0 ; i < SIZE/5; i++){
+        a.remove(-2);
+    }
+    clock_t last2_stop = clock();
+    EXPECT_NEAR(first_stop - first_start, last2_stop - last2_start, 500);
+}
+
+/**
+    *Reverse
+*/
+
+TEST_F(testClass, reverse) {
+    doublyLinkedList<int> a;
+    doublyLinkedList<int> b = a.reverse();
+    ASSERT_EQ(a.size(), 0);
+    ASSERT_EQ(b.size(), 0);
+}
+
+TEST_F(testClass, reverse1) {
+    doublyLinkedList<int> a;
+    a.push_back(5);
+    doublyLinkedList<int> b = a.reverse();
+    
+    ASSERT_EQ(a.size(), 1);
+    
+    ASSERT_EQ(b.size(), 1);
+    
+    ASSERT_EQ(a.getAt(0), 5);
+    
+    ASSERT_EQ(b.getAt(0), 5);
+}
+
+TEST_F(testClass, reverse2) {
+    doublyLinkedList<int> a;
+    a.push_back(5);
+    a.push_back(6);
+    doublyLinkedList<int> b = a.reverse();
+    
+    ASSERT_EQ(a.size(), 2);
+    
+    ASSERT_EQ(b.size(), 2);
+    
+    ASSERT_EQ(a.getAt(0), 5);
+    
+    ASSERT_EQ(b.getAt(0), 6);
+    
+    ASSERT_EQ(a.getAt(1), 6);
+    
+    ASSERT_EQ(b.getAt(1), 5);
+}
+
+TEST_F(testClass, reverse3) {
+    doublyLinkedList<int> a;
+    a.push_back(5);
+    a.push_back(6);
+    a.push_back(7);
+    doublyLinkedList<int> b = a.reverse();
+    
+    ASSERT_EQ(a.size(), 3);
+    
+    ASSERT_EQ(b.size(), 3);
+    
+    ASSERT_EQ(a.getAt(0), 5);
+    
+    ASSERT_EQ(b.getAt(0), 7);
+    
+    ASSERT_EQ(a.getAt(1), 6);
+    
+    ASSERT_EQ(b.getAt(1), 6);
+    
+    ASSERT_EQ(a.getAt(2), 7);
+    
+    ASSERT_EQ(b.getAt(2), 5);
+}
+
+TEST_F(testClass, reverse4) {
+    doublyLinkedList<int> a;
+    a.push_back(5);
+    a.push_back(6);
+    a.push_back(7);
+    a.push_back(8);
+    doublyLinkedList<int> b = a.reverse();
+    
+    ASSERT_EQ(a.size(), 4);
+    
+    ASSERT_EQ(b.size(), 4);
+    
+    ASSERT_EQ(a.getAt(0), 5);
+    
+    ASSERT_EQ(b.getAt(0), 8);
+    
+    ASSERT_EQ(a.getAt(1), 6);
+    
+    ASSERT_EQ(b.getAt(1), 7);
+    
+    ASSERT_EQ(a.getAt(2), 7);
+    
+    ASSERT_EQ(b.getAt(2), 6);
+    
+    ASSERT_EQ(a.getAt(3), 8);
+    
+    ASSERT_EQ(b.getAt(3), 5);
+}
+
+/**
+    *add
+*/
+
+
+TEST_F(testClass, add) {
+    doublyLinkedList<int> c = doublyLinkedList<int>() + doublyLinkedList<int>();
+    ASSERT_EQ(c.size(), 0);
+}
+
+TEST_F(testClass, add1) {
+    doublyLinkedList<int> a;
+    a.push_back(5);
+    doublyLinkedList<int> b;
+    b.push_back(10);
+    doublyLinkedList<int> c = a + b;
+    
+    ASSERT_EQ(a.size(), 1);
+    
+    ASSERT_EQ(b.size(), 1);
+    
+    ASSERT_EQ(c.size(), 2);
+    
+    ASSERT_EQ(c.getAt(0), 5);
+    
+    ASSERT_EQ(c.getAt(1), 10);
+}
+
+TEST_F(testClass, add2) {
+    doublyLinkedList<int> a;
+    doublyLinkedList<int> b;
+    b.push_back(10);
+    b.push_back(11);
+    doublyLinkedList<int> c = a + b;
+    
+    ASSERT_EQ(a.size(), 0);
+    
+    ASSERT_EQ(b.size(), 2);
+    
+    ASSERT_EQ(c.size(), 2);
+    
+    ASSERT_EQ(c.getAt(0), 10);
+    
+    ASSERT_EQ(c.getAt(1), 11);
+}
+
+/**
+    *eq
+*/
+
+
+TEST_F(testClass, eq) {
+    doublyLinkedList<int> a;
+    doublyLinkedList<int> b;
+    ASSERT_TRUE( a == b);
+    ASSERT_TRUE( !(a != b));
+}
+
+TEST_F(testClass, eq1) {
+    doublyLinkedList<int> a;
+    a.push_back(6);
+    doublyLinkedList<int> b;
+    b.push_front(6);
+    ASSERT_TRUE( a == b);
+    ASSERT_TRUE( !(a != b));
+}
+
+TEST_F(testClass, eq2) {
+    doublyLinkedList<int> a;
+    a.push_back(6);
+    doublyLinkedList<int> b;
+    ASSERT_TRUE( a != b);
+    ASSERT_TRUE( !(a == b));
+}
+
+TEST_F(testClass, eq3) {
+    doublyLinkedList<int> a;
+    doublyLinkedList<int> b;
+    b.push_front(6);
+    ASSERT_TRUE( a != b);
+    ASSERT_TRUE( !(a == b));
+}
+
+TEST_F(testClass, eq4) {
+    doublyLinkedList<int> a;
+    a.push_back(6);
+    doublyLinkedList<int> b;
+    a.push_front(7);
+    ASSERT_TRUE( a != b);
+    ASSERT_TRUE( !(a == b));
+}
+
+TEST_F(testClass, eq5) {
+    doublyLinkedList<int> a;
+    a.push_front(5);
+    a.push_back(6);
+    doublyLinkedList<int> b;
+    b.push_front(6);
+    b.push_front(5);
+    ASSERT_TRUE( a == b);
+    ASSERT_TRUE( !(a != b));
+}
+
+/**
+    *clear
+*/
+
+
+TEST_F(testClass, clear){
+    doublyLinkedList<int> a;
+    a.clear();
+    
+    ASSERT_EQ(a.size(), 0);
+}
+
+TEST_F(testClass, clear1){
+    doublyLinkedList<int> a;
+    a.push_back(6);
+    
+    ASSERT_EQ(a.size(), 1);
+    a.clear();
+    
+    ASSERT_EQ(a.size(), 0);
+}
+
+TEST_F(testClass, clear2){
+    doublyLinkedList<int> a;
+    a.push_back(6);
+    
+    ASSERT_EQ(a.size(), 1);
+    a.clear();
+    
+    ASSERT_EQ(a.size(), 0);
+    a.push_back(7);
+    
+    ASSERT_EQ(a.getAt(0), 7);
+}
+
+/**
+    *testStream
+*/
+
+TEST_F(testClass, stream){
+    doublyLinkedList<int> a;
+    a.push_back(5);
+    a.push_back(6);
+    // To test we stream to a stringstream, then remove spaces, then test
+    // the result.
+    stringstream stream;
+    stream << a;
+    string out = stream.str();
+    out.erase(remove_if(out.begin(), out.end(), ::isspace), out.end());
+    
+    ASSERT_EQ(out, "[5,6]");
+}
+
+TEST_F(testClass, stream1){
+    doublyLinkedList<int> a;
+    // To test we stream to a stringstream, then remove spaces, then test
+    // the result.
+    stringstream stream;
+    stream << a;
+    string out = stream.str();
+    out.erase(remove_if(out.begin(), out.end(), ::isspace), out.end());
+    
+    ASSERT_EQ(out, "[]");
+}
+
+TEST_F(testClass, stream2){
+    doublyLinkedList<float> a;
+    a.push_back(5.5);
+    // To test we stream to a stringstream, then remove spaces, then test
+    // the result.
+    stringstream stream;
+    stream << a;
+    string out = stream.str();
+    out.erase(remove_if(out.begin(), out.end(), ::isspace), out.end());
+    
+    ASSERT_EQ(out, "[5.5]");
+}
+
+TEST_F(testClass, stream3){
+    doublyLinkedList<string> a;
+    a.push_back("stuff");
+    a.push_back("more");
+    // To test we stream to a stringstream, then remove spaces, then test
+    // the result.
+    stringstream stream;
+    stream << a;
+    string out = stream.str();
+    out.erase(remove_if(out.begin(), out.end(), ::isspace), out.end());
+    
+    ASSERT_EQ(out, "[stuff,more]");
+}
+
+TEST_F(testClass, stream4){
+    doublyLinkedList<int> a;
+    a.push_back(5);
+    a.push_back(6);
+    a.push_back(7);
+    // To test we stream to a stringstream, then remove spaces, then test
+    // the result.
+    stringstream stream;
+    stream << a;
+    string out = stream.str();
+    out.erase(remove_if(out.begin(), out.end(), ::isspace), out.end());
+    
+    ASSERT_EQ(out, "[5,6,7]");
+}
+
+TEST_F(testClass, testEdge){
+    doublyLinkedList<int> a;
+    const int size = 200;
+    for(int i = 0; i < size; i++){
+        a.push_back(i);
+        a.push_back(i);
+        a.push_front(i);
+        a.remove(-1);
+        
+    ASSERT_EQ(a.size(), (i+1) * 2);
+    }
+    // Make sure the sum is OK  Yes, this is very slow!
+    long long int count = 0;
+    for(unsigned int i = 0; i < a.size(); i++){
+        count = count +  a.getAt(i);
+    }
+    
+    ASSERT_EQ(count, size * (size - 1)); // Does the count match?
+    
+    ASSERT_EQ(a.size(), size * 2);
+
+    for(int i = 0; i < size; i++){
+        a.remove(-1);
+        a.remove(0);
+    }
+    
+    ASSERT_EQ(a.size(), 0);
+}
