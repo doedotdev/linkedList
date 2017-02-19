@@ -660,7 +660,4 @@ ostream& operator<<(ostream& out, const doublyLinkedList<T> other){
     return out;
 }
 
-
-
-
 #endif //LINKEDLIST_DOUBLYLINKEDLIST_H
