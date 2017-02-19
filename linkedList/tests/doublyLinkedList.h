@@ -73,7 +73,7 @@ public:
     // Just like copy constructor except you can asssgin and copy all the data over
     // list a = list b
     // if a == b, return this
-    // else, clear and copy all the data
+    // else, clear and copy all the data over to the new list
     doublyLinkedList<T>& operator= (const doublyLinkedList& other){
         // Fill me in
         if (this == &other){
