@@ -1,3 +1,4 @@
+<h1>Benjamin D. Horn</h1>
 /**
     
     Doubly Linked List - Linked List Implementation
@@ -11,7 +12,7 @@
 
 Feel free to take/fork/download the code. 
 
-Everything you need is in linkedList/linkedList/tests/
+<h3>Everything you need is in linkedList/linkedList/tests/</h3>
 
 The rest is just set up garbage.
 
