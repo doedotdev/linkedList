@@ -11,6 +11,13 @@
 
 Feel free to take/fork/download the code. 
 
+Everything you need is in linkedList/linkedList/tests/
+
+The rest is just set up garbage.
+
+IDE - https://www.jetbrains.com/clion/
+Unit Test Suite - https://github.com/google/googletest
+
 
 
 
