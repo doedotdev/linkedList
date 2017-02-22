@@ -1,12 +1,15 @@
 # Linked List
 ```
-    Doubly Linked List - Linked List Implementation
-    Language - C++
-    Unit tests - Google Test
+Doubly Linked List - Linked List Implementation
+Language - C++
+Unit tests - Google Test
 
-    @author Benjamin D. Horn
-    @version 1.2
-    @date 2.22.2017
+@author Benjamin D. Horn
+@version 1.2
+@date 2.22.2017
+
+IDE - https://www.jetbrains.com/clion/
+Unit Test Suite - https://github.com/google/googletest
 ```
 
 <h3>Doubly Linked List</h3>
@@ -35,7 +38,3 @@ enqueue, dequeue.
 <br>
 <a href="https://github.com/hornbd96/linkedList/blob/master/linkedList/tests/queueTest.cpp">Queue - Unit Tests</a>
 <br>
-
-
-IDE - https://www.jetbrains.com/clion/
-Unit Test Suite - https://github.com/google/googletest
