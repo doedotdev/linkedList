@@ -105,22 +105,74 @@ CMakeFiles/linkedList.dir/tests/tests.cpp.o.provides: CMakeFiles/linkedList.dir/
 CMakeFiles/linkedList.dir/tests/tests.cpp.o.provides.build: CMakeFiles/linkedList.dir/tests/tests.cpp.o
 
 
+CMakeFiles/linkedList.dir/tests/stackTest.cpp.o: CMakeFiles/linkedList.dir/flags.make
+CMakeFiles/linkedList.dir/tests/stackTest.cpp.o: ../tests/stackTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/benjamin.horn/Documents/git/linkedList/linkedList/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/linkedList.dir/tests/stackTest.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/linkedList.dir/tests/stackTest.cpp.o -c /Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/stackTest.cpp
+
+CMakeFiles/linkedList.dir/tests/stackTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/linkedList.dir/tests/stackTest.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/stackTest.cpp > CMakeFiles/linkedList.dir/tests/stackTest.cpp.i
+
+CMakeFiles/linkedList.dir/tests/stackTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/linkedList.dir/tests/stackTest.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/stackTest.cpp -o CMakeFiles/linkedList.dir/tests/stackTest.cpp.s
+
+CMakeFiles/linkedList.dir/tests/stackTest.cpp.o.requires:
+
+.PHONY : CMakeFiles/linkedList.dir/tests/stackTest.cpp.o.requires
+
+CMakeFiles/linkedList.dir/tests/stackTest.cpp.o.provides: CMakeFiles/linkedList.dir/tests/stackTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/tests/stackTest.cpp.o.provides.build
+.PHONY : CMakeFiles/linkedList.dir/tests/stackTest.cpp.o.provides
+
+CMakeFiles/linkedList.dir/tests/stackTest.cpp.o.provides.build: CMakeFiles/linkedList.dir/tests/stackTest.cpp.o
+
+
+CMakeFiles/linkedList.dir/tests/queueTest.cpp.o: CMakeFiles/linkedList.dir/flags.make
+CMakeFiles/linkedList.dir/tests/queueTest.cpp.o: ../tests/queueTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/benjamin.horn/Documents/git/linkedList/linkedList/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/linkedList.dir/tests/queueTest.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/linkedList.dir/tests/queueTest.cpp.o -c /Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/queueTest.cpp
+
+CMakeFiles/linkedList.dir/tests/queueTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/linkedList.dir/tests/queueTest.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/queueTest.cpp > CMakeFiles/linkedList.dir/tests/queueTest.cpp.i
+
+CMakeFiles/linkedList.dir/tests/queueTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/linkedList.dir/tests/queueTest.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/queueTest.cpp -o CMakeFiles/linkedList.dir/tests/queueTest.cpp.s
+
+CMakeFiles/linkedList.dir/tests/queueTest.cpp.o.requires:
+
+.PHONY : CMakeFiles/linkedList.dir/tests/queueTest.cpp.o.requires
+
+CMakeFiles/linkedList.dir/tests/queueTest.cpp.o.provides: CMakeFiles/linkedList.dir/tests/queueTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/tests/queueTest.cpp.o.provides.build
+.PHONY : CMakeFiles/linkedList.dir/tests/queueTest.cpp.o.provides
+
+CMakeFiles/linkedList.dir/tests/queueTest.cpp.o.provides.build: CMakeFiles/linkedList.dir/tests/queueTest.cpp.o
+
+
 # Object files for target linkedList
 linkedList_OBJECTS = \
 "CMakeFiles/linkedList.dir/main.cpp.o" \
-"CMakeFiles/linkedList.dir/tests/tests.cpp.o"
+"CMakeFiles/linkedList.dir/tests/tests.cpp.o" \
+"CMakeFiles/linkedList.dir/tests/stackTest.cpp.o" \
+"CMakeFiles/linkedList.dir/tests/queueTest.cpp.o"
 
 # External object files for target linkedList
 linkedList_EXTERNAL_OBJECTS =
 
 linkedList: CMakeFiles/linkedList.dir/main.cpp.o
 linkedList: CMakeFiles/linkedList.dir/tests/tests.cpp.o
+linkedList: CMakeFiles/linkedList.dir/tests/stackTest.cpp.o
+linkedList: CMakeFiles/linkedList.dir/tests/queueTest.cpp.o
 linkedList: CMakeFiles/linkedList.dir/build.make
 linkedList: lib/googletest-release-1.8.0/googlemock/gtest/libgtest.a
 linkedList: lib/googletest-release-1.8.0/googlemock/gtest/libgtest_main.a
 linkedList: lib/googletest-release-1.8.0/googlemock/gtest/libgtest.a
 linkedList: CMakeFiles/linkedList.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/benjamin.horn/Documents/git/linkedList/linkedList/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable linkedList"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/benjamin.horn/Documents/git/linkedList/linkedList/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable linkedList"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/linkedList.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -130,6 +182,8 @@ CMakeFiles/linkedList.dir/build: linkedList
 
 CMakeFiles/linkedList.dir/requires: CMakeFiles/linkedList.dir/main.cpp.o.requires
 CMakeFiles/linkedList.dir/requires: CMakeFiles/linkedList.dir/tests/tests.cpp.o.requires
+CMakeFiles/linkedList.dir/requires: CMakeFiles/linkedList.dir/tests/stackTest.cpp.o.requires
+CMakeFiles/linkedList.dir/requires: CMakeFiles/linkedList.dir/tests/queueTest.cpp.o.requires
 
 .PHONY : CMakeFiles/linkedList.dir/requires
 

@@ -337,6 +337,18 @@
 		<Unit filename="/Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/doublyLinkedList.h">
 			<Option target="linkedList"/>
 		</Unit>
+		<Unit filename="/Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/queue.h">
+			<Option target="linkedList"/>
+		</Unit>
+		<Unit filename="/Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/queueTest.cpp">
+			<Option target="linkedList"/>
+		</Unit>
+		<Unit filename="/Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/stack.h">
+			<Option target="linkedList"/>
+		</Unit>
+		<Unit filename="/Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/stackTest.cpp">
+			<Option target="linkedList"/>
+		</Unit>
 		<Unit filename="/Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/tests.cpp">
 			<Option target="linkedList"/>
 		</Unit>

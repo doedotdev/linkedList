@@ -246,6 +246,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tests/queueTest.o: tests/queueTest.cpp.o
+
+.PHONY : tests/queueTest.o
+
+# target to build an object file
+tests/queueTest.cpp.o:
+	$(MAKE) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/tests/queueTest.cpp.o
+.PHONY : tests/queueTest.cpp.o
+
+tests/queueTest.i: tests/queueTest.cpp.i
+
+.PHONY : tests/queueTest.i
+
+# target to preprocess a source file
+tests/queueTest.cpp.i:
+	$(MAKE) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/tests/queueTest.cpp.i
+.PHONY : tests/queueTest.cpp.i
+
+tests/queueTest.s: tests/queueTest.cpp.s
+
+.PHONY : tests/queueTest.s
+
+# target to generate assembly for a file
+tests/queueTest.cpp.s:
+	$(MAKE) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/tests/queueTest.cpp.s
+.PHONY : tests/queueTest.cpp.s
+
+tests/stackTest.o: tests/stackTest.cpp.o
+
+.PHONY : tests/stackTest.o
+
+# target to build an object file
+tests/stackTest.cpp.o:
+	$(MAKE) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/tests/stackTest.cpp.o
+.PHONY : tests/stackTest.cpp.o
+
+tests/stackTest.i: tests/stackTest.cpp.i
+
+.PHONY : tests/stackTest.i
+
+# target to preprocess a source file
+tests/stackTest.cpp.i:
+	$(MAKE) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/tests/stackTest.cpp.i
+.PHONY : tests/stackTest.cpp.i
+
+tests/stackTest.s: tests/stackTest.cpp.s
+
+.PHONY : tests/stackTest.s
+
+# target to generate assembly for a file
+tests/stackTest.cpp.s:
+	$(MAKE) -f CMakeFiles/linkedList.dir/build.make CMakeFiles/linkedList.dir/tests/stackTest.cpp.s
+.PHONY : tests/stackTest.cpp.s
+
 tests/tests.o: tests/tests.cpp.o
 
 .PHONY : tests/tests.o
@@ -293,6 +347,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tests/queueTest.o"
+	@echo "... tests/queueTest.i"
+	@echo "... tests/queueTest.s"
+	@echo "... tests/stackTest.o"
+	@echo "... tests/stackTest.i"
+	@echo "... tests/stackTest.s"
 	@echo "... tests/tests.o"
 	@echo "... tests/tests.i"
 	@echo "... tests/tests.s"

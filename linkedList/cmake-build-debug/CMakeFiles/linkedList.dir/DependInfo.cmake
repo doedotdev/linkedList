@@ -5,6 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/benjamin.horn/Documents/git/linkedList/linkedList/main.cpp" "/Users/benjamin.horn/Documents/git/linkedList/linkedList/cmake-build-debug/CMakeFiles/linkedList.dir/main.cpp.o"
+  "/Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/queueTest.cpp" "/Users/benjamin.horn/Documents/git/linkedList/linkedList/cmake-build-debug/CMakeFiles/linkedList.dir/tests/queueTest.cpp.o"
+  "/Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/stackTest.cpp" "/Users/benjamin.horn/Documents/git/linkedList/linkedList/cmake-build-debug/CMakeFiles/linkedList.dir/tests/stackTest.cpp.o"
   "/Users/benjamin.horn/Documents/git/linkedList/linkedList/tests/tests.cpp" "/Users/benjamin.horn/Documents/git/linkedList/linkedList/cmake-build-debug/CMakeFiles/linkedList.dir/tests/tests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
