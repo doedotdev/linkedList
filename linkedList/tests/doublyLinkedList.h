@@ -99,6 +99,22 @@ public:
         }
     }
 
+    string catRet(){ // returns string of the linked list. not comma sepertated or formatted ex: [0,1] == 01
+        string ret = "";
+        string temp_str;
+        node_t<T> * temp = head;
+        while(temp->next){
+            temp_str = (string)temp->value;
+            ret = ret + temp_str;
+            //cout << temp->value << endl;
+            temp = temp->next;
+        }
+        //cout << temp->value << endl;
+        temp_str = (string)temp->value;
+        ret = ret + temp_str;
+        return ret;
+    }
+
     // Returns value at pos of type T
     T getAt(int pos) const{
         // Fill me in
